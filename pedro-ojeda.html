@@ -1,0 +1,218 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Recepcion de Pedro Ojeda</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Encabezado */
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Botón Volver al Inicio */
+        .back-button {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Sección de contenido */
+        .content {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Opciones */
+        .option {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            background: #f9f9f9;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .option:hover {
+            background: #e3e9f1;
+            transform: scale(1.02);
+        }
+
+        .option h3 {
+            margin-top: 0;
+            color: #34495e;
+        }
+
+        /* Botones */
+        .option button,
+        .content button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .option button:hover,
+        .content button:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+
+        /* Botón de estado */
+        #statusButton {
+            display: block;
+            margin: 15px auto;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 12px 20px;
+        }
+
+        /* Secciones ocultas */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <button class="back-button" onclick="showTab('inicio')">⬅</button>
+            <h1>Menu de Recepcion de Pedro Ojeda</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="inicio" class="content">
+            <div class="option">
+                <h3>Hacer pedidos</h3>
+                <p>Entra a esta opción si quieres hacer un pedido de diseños gráficos u otros tipos de pedidos que aceptamos.</p>
+                <button onclick="showTab('hpedidos')">Seleccionar opción</button>
+            </div>
+            <div class="option">
+                <h3>Mis redes sociales</h3>
+                <p>Selecciona esta opción para poder ver mis redes sociales.</p>
+                <button onclick="showTab('redes')">Seleccionar opción</button>
+            </div>
+            <div class="option">
+                <h3>Horarios del colegio</h3>
+                <p>Selecciona esta opción si quieres ver cuándo estoy en el colegio y si estoy disponible.</p>
+                <button onclick="showTab('colegio')">Seleccionar opción</button>
+            </div>
+            <div class="option">
+                <h3>Números de Contacto Secundario</h3>
+                <p>Usa esta opción para ver los demás números a los cuales me puedes mandar mensaje.</p>
+                <button onclick="showTab('contactoplus')">Seleccionar opción</button>
+            </div>
+        </div>
+
+        <div id="hpedidos" class="content hidden">
+            <h2>Hacer pedidos</h2>
+            <p>Para hacer un pedido, usa el siguiente botón.</p>
+            <button onclick="window.location.href='https://wa.me/542215989210?text=%3D'">Hacer un pedido</button>
+        </div>
+
+        <div id="redes" class="content hidden">
+            <h2>Mis redes sociales</h2>
+            <button onclick="window.location.href='https://www.tiktok.com/@pedro.priv.12'">Tik Tok</button>
+            <button onclick="window.location.href='https://www.instagram.com/pedro.privado.12'">Instagram</button>
+            <button onclick="window.location.href='#'">Discord</button>
+        </div>
+
+        <div id="colegio" class="content hidden">
+            <h2>Horarios del Colegio</h2>
+            <p>Todo el mes de Febrero desde las 1:10 p.m. hasta las 5:00 p.m. estoy en la escuela secundaria.</p>
+            <button id="statusButton">Libre</button>
+        </div>
+
+        <div id="contactoplus" class="content hidden">
+            <h2>Número de Contacto Secundario</h2>
+            <button onclick="window.location.href='https://wa.me/542215966651'">Mamá de Pedro Ojeda</button>
+            <button onclick="window.location.href='https://wa.me/542215966655'">Papá de Pedro Ojeda</button>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        function updateStatusButton() {
+            const button = document.getElementById('statusButton');
+            const now = new Date();
+            const month = now.getMonth();
+            const day = now.getDay();
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+
+            if (month === 1 && [1, 2, 3, 5].includes(day) && (hour === 13 && minute >= 10 || hour > 13 && hour < 17)) {
+                button.textContent = 'Ocupado';
+                button.style.backgroundColor = 'red';
+                button.style.color = 'white';
+            } else {
+                button.textContent = 'Libre';
+                button.style.backgroundColor = 'lightgreen';
+                button.style.color = 'white';
+            }
+        }
+
+        updateStatusButton();
+        setInterval(updateStatusButton, 60000);
+    </script>
+</body>
+</html>

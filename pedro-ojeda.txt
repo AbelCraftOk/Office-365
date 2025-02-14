@@ -1,0 +1,108 @@
+Crea un codigo html para un menu de recepcion.
+
+Asegurate de crearle un <style> muy bonito asi impresiono a mis amigos. (Mejore el estilo con chatgpt)
+En todas las pestañas menos en el inicio, pon un boton para in a la pestaña: "inicio".
+
+Crea las pestañas:
+"inicio" - Inicio
+"hpedidos" - Hacer pedidos.
+"redes" - Mis redes sociales.
+"colegio" - Horarios del colegio.
+"contactoplus" - Numeros de Contacto secundario.
+
+Configurar la pestaña: "inicio" (que el contenido de esta pestaña este centrado y solo ocupe el espacio que necesita).
+
+Titulo: "Bienvenido al"
+Texto: "Menu de Recepcion de Pedro Ojeda"
+
+Agrega opciones para que el usuario pueda seleccionarlas.
+
+Recuadro de la opcion 1: (Contenido: {
+    Titulo: "Hacer pedidos"
+    Texto: "Entra a esta opcion si quieres hacer un pedido de diseños graficos u otros tipo de pedidos que aceptamos."
+    Boton: {
+        Nombre: "Seleccionar opcion"
+        Funcion: Llevara a la pestaña: "hpedidos"
+    }
+})
+
+Recuadro de la opcion 2: (Contenido: {
+    Titulo: "Mis redes sociales"
+    Texto: "Seleccina esta opcion para poder ver mis redes sociales."
+    Boton: {
+        Nombre: "Seleccionar opcion"
+        Funcion: Llevara a la pestaña: "redes"
+    }
+})
+
+Recuadro de la opcion 3: (Contenido: {
+    Titulo: "Horarios del colegio"
+    Texto: "Seleccina esta opcion si quieres ver cuando estoy en el colegio y si estoy disponible."
+    Boton: {
+        Nombre: "Seleccionar opcion"
+        Funcion: Llevara a la pestaña: "colegio"
+    }
+})
+
+Recuadro de la opcion 4: (Contenido: {
+    Titulo: "Numeros de Contacto secundario"
+    Texto: "Usa esta opcion para ver lo demas numeros a los cuales me puedes mandar mensaje."
+    Boton: {
+        Nombre: "Seleccionar opcion"
+        Funcion: Llevara a la pestaña: "contactoplus"
+    }
+})
+
+Configurar la pestaña: "hpedidos"
+
+Titulo: "Hacer pedidos"
+
+Para hacer un pedido, usa el siguiente boton.
+Boton: (Configuracion: {
+    Nombre: "Hacer un pedido"
+    Funcion: Llevara al usuario al numero de whatsapp: +54 221 598-9210 y en la barra de mensajes se cargara el simbolo: "=".
+})
+
+Configurar la pestaña: "redes"
+
+Titulo: "Mis redes sociales"
+
+Boton: (Configuracion: {
+    Nombre: "Tik Tok"
+    Funcion: Llevara al usuario al sitio web: "https://www.tiktok.com/@pedro.priv.12"
+})
+
+Boton: (Configuracion: {
+    Nombre: "Instagram"
+    Funcion: Llevara al usuario al sitio web: "www.instagram.com/pedro.privado.12"
+})
+
+Boton: (Configuracion: {
+    Nombre: "Discord"
+    Funcion: Llevara al usuario al sitio web: ""
+})
+
+Configurar la pestaña: "colegio"
+
+Titulo: "Horarios del Colegio"
+
+Texto: Todo el mes de Febrero desde las 1:10 p.m. hasta las 5:00 p.m. estoy en la escuela secundaria.
+
+Abra un boton que no se podra accionar pero tendra igualmente una funcion: (Configuracion: {
+    Nombre: (El nombre dependera de la siguiente configuracion: Si es el mes de Febrero y el dia es un: Lunes, Martes, Miercoles o Viernes y la hora de argentina es entre las 1:10 pm y 4:50 pm el boton se llamara: "Ocupado" con las letras en blanco y el relleno en rojo. Pero si no es febrero o es dia de semana pero no es el horario sera: "Libre" con letra blanca y relleno verde claro).
+    Funcion: ...
+})
+
+Configurar la pestaña: "contactoplus"
+
+Titulo: "Numero de Contacto secundario"
+
+Boton: (Configuracion: {
+    Nombre: "Mama de Pedro Ojeda"
+    Funcion: Llevara al usuario al numero de whatsapp: +54 221 596-6651
+})
+
+Boton: (Configuracion: {
+    Nombre: "Papa de Pedro Ojeda"
+    Funcion: Llevara al usuario al numero de whatsapp: +54 221 596-6655
+})
