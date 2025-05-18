@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Office 365</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tutorial para descargar Office 365 y usarlo en el navegador.">
+    <meta name="keywords" content="Office 365, tutorial, descargar, navegador">
+    <meta name="author" content="AbelCraftOk">
+    <link rel="icon" href="https://abelcraftok.github.io/Office-365/icon1+.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+        }
+        .encabezado {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background: linear-gradient(90deg, #232526 0%, #414345 100%);
+            color: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+            transition: background 0.5s;
+        }
+        .encabezado select, .encabezado button {
+            margin-left: 20px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
+            color: #232526;
+            cursor: pointer;
+            transition: box-shadow 0.3s, background 0.3s;
+        }
+        .encabezado select:focus, .encabezado button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #ffd200;
+        }
+        .pestaña {
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            margin: 0 auto 30px auto;
+            max-width: 700px;
+            min-height: 350px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+            padding: 40px 32px;
+            animation: fadeIn 0.7s;
+            position: relative;
+        }
+        .contenido-web {
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            margin: 0 auto 30px auto;
+            max-width: 700px;
+            min-height: 350px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+            padding: 40px 32px;
+            animation: fadeIn 0.7s;
+            position: relative;
+            align-items: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .recuadro {
+            background: linear-gradient(100deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            margin-bottom: 28px;
+            padding: 24px 20px;
+            transition: box-shadow 0.3s;
+        }
+        .recuadro h2 {
+            margin-top: 0;
+            color: #232526;
+            text-align: center;
+        }
+        .recuadro button {
+            margin-top: 12px;
+            background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 22px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+            transition: background 0.3s;
+        }
+        .recuadro button:hover {
+            background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+        }
+        /* Clase separator para separar visualmente secciones */
+        .separator {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #ffd200 0%, #43cea2 100%);
+            border: none;
+            margin: 28px 0;
+            border-radius: 2px;
+        }
+        @media (max-width: 800px) {
+            .pestaña {
+                padding: 20px 8px;
+                max-width: 98vw;
+            }
+            .encabezado {
+                flex-direction: column;
+                align-items: flex-end;
+                padding: 12px 8px;
+            }
+        }
+        /* Centramos todos los h1 y h2 */
+        h1, h2 {
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            max-width: 700px;
+            height: 700px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        /* Estilo para el recuadro tecnológico */
+        .recuadro.code {
+            background: linear-gradient(120deg, #1e1e1e 0%, #2d2d2d 100%);
+            color: #d4d4d4;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            margin-bottom: 28px;
+            padding: 24px 20px;
+            overflow: auto;
+            word-wrap: break-word;
+            transition: box-shadow 0.3s;
+        }
+        .recuadro.code h2 {
+            margin-top: 0;
+            color: #61dafb;
+            text-align: center;
+        }
+        .recuadro.code pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .recuadro.code:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado superior -->
+    <div class="encabezado" id="encabezado-superior">
+        <img src="https://abelcraftok.github.io/Office-365/icon1+.png" alt="LOGO" width="100" height="110.25" style="margin: 0 auto; display: block;">
+    </div>
+
+    <div id="inicio" class="pestaña container" style="display: block;">
+        <h1>Office 365</h1>
+        <div class="recuadro">
+            <h2>Tutorial</h2>
+            <p>¿Quieres office para usarlo en tu navegador o quieres tenerlo descargado?</p>
+            <button onclick="mostrarPestaña('tutorial-A')">Tutorial para descargarlo (RECOMENDADO).</button>
+            <button onclick="mostrarPestaña('tutorial-B')">Tutorial para tenerlo en el Navegador.</button>
+        </div>
+    </div>
+    
+    <div id="tutorial-A" class="pestaña container" style="display: none;">
+        <h1>Tutorial para descargar Office 365</h1>
+        <div class="recuadro">
+            <h2>REQUISITOS:</h2>
+            <ul>
+                <li>Descargar el instalador:</li><button onclick="window.open('https://github.com/AbelCraftOk/Office-365/releases/tag/instaler')">Visitar la ultima version del Archivo.exe</button>
+                <li>Tener un correo (no importa de que lgar, ej: @gmail.com). Si no tienes uno mas adelante tendras la opcion de crear uno.</li>
+                <li>Un ordenador con Windows 10 o superior.</li>
+            </ul>
+        </div>
+        <div class="recuadro">
+            <h2>PARTE A: Como prepar la aplicacion</h2>
+            <ul>
+                <li>Dirijete a la carpeta donde descargaste el archivo solicitado anteriormente.</li>
+                <li>Cuando lo allas encontrado, haz clic derecho en el archivo y usa la opcion: "Ejecutar como Administrador".</li>
+                <li>Se te abrira una ventanita, ahi selecciona tu idioma (Español preferentemente) y luego en "Aceptar".</li>
+                <li>Te preguntara si quieres que se te agregue un acceso directo en el escritorio, responde lo que tu desees y aprieta "Siguiente".</li>
+                <li>Te mostrara que se va a descargar y tu pon "Instalar".</li>
+                <li>Espera a que termine la descarga. Al terminar usa el boton: "Ejecutar Office 365" y luego "Finalizar".</li>
+            </ul>
+        </div>
+        <div class="recuadro">
+            <h2>PARTE B: Acceder a los servicios</h2>
+            <p>Te recomendamos ver el siguiente video que explica muy bien detalle a detalle.</p>
+            <p>Recuerda empezar en el minuto: 1:08</p>
+            <button onclick="window.open('https://youtu.be/jiO8HDm6BJw?si=ZCfBgODb5_2ABlI5&t=68')">Si no te carga aqui abajo</button>
+            <iframe src="https://youtu.be/jiO8HDm6BJw?si=ZCfBgODb5_2ABlI5&t=68"></iframe>
+        </div>
+    </div>
+
+    <div id="tutorial-B" class="pestaña container" style="display: none;">
+        <div class="recuadro">
+            <h2>PARTE B: Acceder a los servicios</h2>
+            <p>Te recomendamos ver el siguiente video que explica muy bien detalle a detalle.</p>
+            <p>Recuerda empezar en el minuto: 00:00</p>
+            <button onclick="window.open('https://youtu.be/jiO8HDm6BJw?si=jQQnJxQ1B9KfpSWb')">Si no te carga aqui abajo</button>
+            <iframe src="https://youtu.be/jiO8HDm6BJw?si=jQQnJxQ1B9KfpSWb"></iframe>
+        </div>
+    </div>
+    </div>
+
+    <!-- Encabezado inferior -->
+    <div class="encabezado" id="encabezado-inferior" style="margin-top:30px;">
+        <button onclick="mostrarPestaña('inicio')">Volver al inicio</button>
+    </div>
+
+    <script>
+        function mostrarPestaña(id) {
+        // Oculta todas las pestañas
+            document.querySelectorAll('.container').forEach(div => {
+            div.style.display = 'none';
+        });
+    
+        // Muestra la pestaña seleccionada
+        document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
